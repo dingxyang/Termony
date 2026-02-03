@@ -10,7 +10,7 @@ all: download/ffmpeg-8.0.tar.xz ohos_config.sh
 	cd temp && mv ffmpeg-8.0 src
 
 	# fix script permission
-	cd temp/src && cp ../../ohos_config.sh . && chmod +x ./ffbuild/*.sh
+    cd temp/src && cp ../../ohos_config.sh . && chmod +x ./ohos_config.sh && chmod +x ./ffbuild/*.sh 
 
 	# fix pkgconfig prefix
 	cd temp/pkgconfig && cp ../../../sysroot/lib/pkgconfig/SvtAv1Enc.pc . && sed -i 's@$(PREFIX)@$(shell pwd)/../sysroot@g' SvtAv1Enc.pc
